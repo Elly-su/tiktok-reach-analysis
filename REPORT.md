@@ -1,5 +1,4 @@
 # TikTok Reach Analysis Project
-## BSC Data Science
 
 **Authors:**  
 - Elly Ochieng Kimbero - C029/401370/2023
@@ -8,8 +7,7 @@
 - Osman Abdirahman Abdiqafar - C029/401735/2023
 - Winfred Waeni Kingola - C032/401700/2023
 
-**Date:** December 16, 2024  
-**Course:** BSC Data Science
+**Date:** December 16, 2024
 
 ---
 
