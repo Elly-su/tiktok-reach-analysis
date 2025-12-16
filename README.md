@@ -189,20 +189,6 @@ jupyter notebook
 
 ---
 
-## 👨‍💻 Author
-
-**[Your Name]**  
-BSC Data Science  
-December 2024
-
----
-
-## 📄 License
-
-This project is for educational purposes as part of C.A.T 3 coursework.
-
----
-
 ## 🙏 Acknowledgments
 
 - TikTok for inspiring the analysis
