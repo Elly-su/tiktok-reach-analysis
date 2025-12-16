@@ -1,9 +1,5 @@
 # TikTok Reach Analysis Project
 
-🎯 **BSC Data Science - C.A.T 3**
-
-A comprehensive data analysis project exploring TikTok video performance and reach optimization using Python, statistical analysis, and machine learning.
-
 ---
 
 ## 📊 Project Overview
