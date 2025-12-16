@@ -87,7 +87,7 @@ pip install pandas numpy matplotlib seaborn plotly scikit-learn jupyter
 
 1. **Navigate to project directory:**
 ```bash
-cd "c:\Users\ellio\Tiktok Reach Analysis Project"
+cd tiktok-reach-analysis
 ```
 
 2. **Generate dataset (already done):**
