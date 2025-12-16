@@ -1,11 +1,12 @@
 # TikTok Reach Analysis - Final Submission Report
 
 **Project Team:**
-- Elly Ochieng Kimbero - C029/401370/2023
-- Kibe Nyoike John - C029/401311/2023
-- Natasha Imani Umira - C032/402516/2023
-- Osman Abdirahman Abdiqafar - C029/401735/2023
-- Winfred Waeni Kingola - C032/401700/2023
+
+Elly Ochieng Kimbero - C029/401370/2023  
+Kibe Nyoike John - C029/401311/2023  
+Natasha Imani Umira - C032/402516/2023  
+Osman Abdirahman Abdiqafar - C029/401735/2023  
+Winfred Waeni Kingola - C032/401700/2023
 
 **Date:** December 16, 2024
 
@@ -307,8 +308,6 @@ This project was completed collaboratively by:
 ---
 
 **GitHub Repository:** https://github.com/Elly-su/tiktok-reach-analysis
-
-**Date Submitted:** December 16, 2024
 
 ---
 
