@@ -1,7 +1,13 @@
 # TikTok Reach Analysis Project
-## BSC Data Science - C.A.T 3
+## BSC Data Science
 
-**Author:** [Your Name]  
+**Authors:**  
+- Elly Ochieng Kimbero - C029/401370/2023
+- Kibe Nyoike John - C029/401311/2023
+- Natasha Imani Umira - C032/402516/2023
+- Osman Abdirahman Abdiqafar - C029/401735/2023
+- Winfred Waeni Kingola - C032/401700/2023
+
 **Date:** December 16, 2024  
 **Course:** BSC Data Science
 
