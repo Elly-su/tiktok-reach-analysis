@@ -45,6 +45,22 @@ This project analyzes TikTok video engagement data to understand factors influen
 
 ---
 
+## 📊 Key Visualizations
+
+### Distribution of Video Views
+![Views Distribution](visualizations/views_distribution.png)
+
+### Average Reach by Hour of Day
+![Hourly Reach](visualizations/hourly_reach.png)
+
+### Performance by Content Category
+![Category Performance](visualizations/category_performance.png)
+
+### Engagement Metrics Correlation
+![Correlation Matrix](visualizations/correlation_matrix.png)
+
+---
+
 ## 📁 Project Structure
 
 ```
