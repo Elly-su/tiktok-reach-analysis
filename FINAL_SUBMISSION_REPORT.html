@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #444;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+            line-height: 2.0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        strong {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+<h1>TikTok Reach Analysis - Final Submission Report</h1>
+<p><strong>Project Team:</strong></p>
+<p>Elly Ochieng Kimbero - C029/401370/2023<br />
+Kibe Nyoike John - C029/401311/2023<br />
+Natasha Imani Umira - C032/402516/2023<br />
+Osman Abdirahman Abdiqafar - C029/401735/2023<br />
+Winfred Waeni Kingola - C032/401700/2023</p>
+<p><strong>Date:</strong> December 16, 2024</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>This project analyzes TikTok reach patterns using real engagement data from TikTok videos to understand factors that influence content visibility and performance. Our analysis of 1,000 TikTok videos reveals that posting time, video length, and engagement metrics significantly impact reach, with actionable recommendations for content creators.</p>
+<hr />
+<h2>1. Data Collection and Preparation</h2>
+<h3>i. Gathering TikTok Reach Data</h3>
+<p>We collected real TikTok engagement data comprising <strong>1,000 video posts</strong> spanning from January to December 2024. The dataset includes comprehensive metrics from TikTok insights:</p>
+<p><strong>Data Collected:</strong><br />
+- <strong>Reach Metrics:</strong> Views (total video reach)<br />
+- <strong>Engagement Metrics:</strong> Likes, Comments, Shares<br />
+- <strong>Content Information:</strong> Category, Video Length, Hashtags<br />
+- <strong>Temporal Data:</strong> Upload Date, Upload Time, Day of Week<br />
+- <strong>User Information:</strong> Follower count, Following count, Total likes</p>
+<p><strong>Dataset Summary:</strong><br />
+- Total Videos: 1,000<br />
+- Date Range: January 1 - December 14, 2024<br />
+- Categories: Dance, Comedy, Tutorial, Cooking, Fashion, Gaming, Music, Fitness<br />
+- Average Views per Video: 75,977<br />
+- Total Engagement Events: 6.9 million (likes + comments + shares)</p>
+<hr />
+<h2>2. Data Import and Cleaning</h2>
+<h3>ii. Importing Data into Python</h3>
+<p>We successfully imported the TikTok data from CSV format into Python using Pandas for analysis:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+
+<span class="c1"># Load TikTok engagement data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/tiktok_data.csv&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataset loaded: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> videos with </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> features&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><strong>Data Cleaning Process:</strong><br />
+1. ✅ Verified data integrity (no missing values found)<br />
+2. ✅ Converted date/time columns to proper datetime format<br />
+3. ✅ Created derived features:<br />
+   - Weekend flag (Saturday/Sunday posts)<br />
+   - Time period categories (Morning/Afternoon/Evening/Late Night)<br />
+   - Video length categories (Short/Medium/Long)<br />
+   - Engagement rate calculations</p>
+<p><strong>Data Quality:</strong><br />
+- Missing Values: 0<br />
+- Duplicate Records: 0<br />
+- Data Types: All correctly formatted<br />
+- Date Range: Validated and consistent</p>
+<hr />
+<h2>3. Data Visualization and Pattern Analysis</h2>
+<h3>iii. Calculating Metrics and Creating Visualizations</h3>
+<p>Using Matplotlib, Seaborn, and Plotly, we calculated key metrics and identified patterns in TikTok reach:</p>
+<h3>Distribution of Video Reach</h3>
+<p><img alt="Views Distribution" src="visualizations/views_distribution.png" /></p>
+<p><strong>Key Finding:</strong> Video reach follows a long-tail distribution with most videos receiving 10,000-50,000 views, while a small percentage achieve viral status with over 1 million views.</p>
+<hr />
+<h3>Temporal Analysis: Reach by Hour of Day</h3>
+<p><img alt="Hourly Reach" src="visualizations/hourly_reach.png" /></p>
+<p><strong>Key Finding:</strong> Peak posting hours are 6-9 PM (18:00-21:00), showing <strong>50% higher average views</strong> compared to other times. Late night/early morning hours (12 AM - 6 AM) show the lowest reach.</p>
+<p><strong>Hourly Reach Statistics:</strong><br />
+- Peak Hours (6-9 PM): ~115,000 avg views<br />
+- Moderate Hours (12-5 PM): ~90,000 avg views<br />
+- Low Hours (12-6 AM): ~55,000 avg views</p>
+<hr />
+<h3>Content Category Performance</h3>
+<p><img alt="Category Performance" src="visualizations/category_performance.png" /></p>
+<p><strong>Key Finding:</strong> Gaming, Comedy, and Fashion categories consistently achieve the highest average reach, outperforming other content types by 30-40%.</p>
+<p><strong>Top Performing Categories:</strong><br />
+1. Gaming: Highest average views<br />
+2. Comedy: Strong engagement rates<br />
+3. Fashion: High shareability</p>
+<hr />
+<h3>Engagement Metrics Correlation</h3>
+<p><img alt="Correlation Matrix" src="visualizations/correlation_matrix.png" /></p>
+<p><strong>Key Finding:</strong> Strong positive correlation (r &gt; 0.95) exists between all engagement metrics and views. Likes show the strongest relationship with reach, followed by shares and comments.</p>
+<p><strong>Correlation Analysis:</strong><br />
+- Likes vs Views: r = 0.99 (very strong positive)<br />
+- Shares vs Views: r = 0.98 (very strong positive)<br />
+- Comments vs Views: r = 0.97 (very strong positive)</p>
+<p>All correlations are statistically significant (p &lt; 0.001).</p>
+<hr />
+<h2>4. Conclusions: Factors Influencing TikTok Reach</h2>
+<h3>iv. Key Findings and Recommendations</h3>
+<p>Based on our comprehensive data analysis, we identified <strong>four critical factors</strong> that significantly influence TikTok reach:</p>
+<h3>🕐 Factor 1: Posting Time</h3>
+<p><strong>Finding:</strong> Posting time has a <strong>statistically significant impact</strong> on reach (ANOVA p &lt; 0.001).</p>
+<p><strong>Evidence:</strong><br />
+- Evening posts (6-9 PM) receive 50% more views than average<br />
+- Weekend posts get 30% higher engagement<br />
+- Late night posts (12-6 AM) underperform by 30%</p>
+<p><strong>Recommendation:</strong> Schedule posts during evening hours (6-9 PM) and prioritize weekends for maximum visibility.</p>
+<hr />
+<h3>💬 Factor 2: Engagement Metrics</h3>
+<p><strong>Finding:</strong> Early engagement (likes, comments, shares) strongly predicts final reach with correlations exceeding 0.95.</p>
+<p><strong>Evidence:</strong><br />
+- Videos with high likes achieve proportionally higher views<br />
+- Share count is a strong indicator of viral potential<br />
+- Comment activity signals audience interest and algorithm favorability</p>
+<p><strong>Recommendation:</strong> Create content that encourages immediate engagement through calls-to-action, questions, and shareable moments.</p>
+<hr />
+<h3>📹 Factor 3: Video Length</h3>
+<p><strong>Finding:</strong> Video duration significantly affects reach (Kruskal-Wallis p &lt; 0.05), with optimal length varying by category.</p>
+<p><strong>Evidence:</strong><br />
+- Short videos (15-30s): Highest average reach<br />
+- Medium videos (31-90s): Moderate performance<br />
+- Long videos (&gt;90s): Lower engagement rates<br />
+- Exception: Tutorial content performs better at medium length</p>
+<p><strong>Recommendation:</strong> Keep videos concise (15-30 seconds) for maximum engagement, except for educational content where medium length is optimal.</p>
+<hr />
+<h3>📊 Factor 4: Content Category</h3>
+<p><strong>Finding:</strong> Content type is a major determinant of reach potential.</p>
+<p><strong>Evidence:</strong><br />
+- Gaming content: 40% higher average views<br />
+- Comedy content: 35% higher engagement rate<br />
+- Fashion content: 30% higher shareability<br />
+- Tutorial content: Lower reach but higher watch completion</p>
+<p><strong>Recommendation:</strong> Focus on high-performing categories (Gaming, Comedy, Fashion) or create hybrid content combining popular elements.</p>
+<hr />
+<h2>5. Predictive Model Results</h2>
+<p>We built machine learning models to predict video reach with impressive accuracy:</p>
+<p><strong>Model Performance:</strong><br />
+- <strong>Best Model:</strong> Random Forest Regressor<br />
+- <strong>Accuracy:</strong> R² = 0.73 (73% of reach variance explained)<br />
+- <strong>Cross-Validation:</strong> Consistent performance across folds</p>
+<p><strong>Top 5 Predictive Features:</strong><br />
+1. User Follower Count (strongest predictor)<br />
+2. Number of Hashtags Used<br />
+3. Upload Hour<br />
+4. Video Length<br />
+5. Content Category</p>
+<p><strong>Insight:</strong> The model confirms that follower base is the strongest single predictor of reach, but temporal factors (posting time) and content characteristics significantly improve predictions.</p>
+<hr />
+<h2>6. Actionable Recommendations</h2>
+<p>Based on our analysis of real TikTok data, we recommend the following strategies:</p>
+<h3>For Content Creators:</h3>
+<ol>
+<li><strong>Optimize Posting Schedule</strong></li>
+<li>Post between 6-9 PM for maximum reach</li>
+<li>Prioritize Saturday and Sunday</li>
+<li>
+<p>Avoid posting between midnight and 6 AM</p>
+</li>
+<li>
+<p><strong>Content Strategy</strong></p>
+</li>
+<li>Keep videos under 30 seconds</li>
+<li>Focus on Gaming, Comedy, or Fashion content</li>
+<li>
+<p>Use 3-5 relevant hashtags per post</p>
+</li>
+<li>
+<p><strong>Engagement Tactics</strong></p>
+</li>
+<li>Encourage likes and shares in first hour</li>
+<li>Create shareable, relatable content</li>
+<li>Respond to comments to boost algorithm favorability</li>
+</ol>
+<h3>For Marketers:</h3>
+<ol>
+<li>Schedule campaigns during peak hours</li>
+<li>A/B test video lengths by category</li>
+<li>Track engagement rates for ROI optimization</li>
+<li>Build audience before major campaigns</li>
+</ol>
+<hr />
+<h2>7. Methodology</h2>
+<p><strong>Tools and Libraries Used:</strong><br />
+- <strong>Python 3.x</strong> - Primary programming language<br />
+- <strong>Pandas &amp; NumPy</strong> - Data manipulation and analysis<br />
+- <strong>Matplotlib &amp; Seaborn</strong> - Statistical visualizations<br />
+- <strong>Plotly</strong> - Interactive charts<br />
+- <strong>Scikit-learn</strong> - Machine learning models<br />
+- <strong>SciPy</strong> - Statistical testing</p>
+<p><strong>Statistical Tests Performed:</strong><br />
+- ANOVA - Testing temporal impact on reach<br />
+- Pearson Correlation - Analyzing engagement relationships<br />
+- Kruskal-Wallis H-test - Comparing reach across video lengths<br />
+- Cross-validation - Validating model performance</p>
+<p><strong>Analysis Workflow:</strong><br />
+1. Data collection from TikTok insights<br />
+2. Data cleaning and preprocessing in Python<br />
+3. Exploratory data analysis with visualizations<br />
+4. Statistical hypothesis testing<br />
+5. Machine learning model development<br />
+6. Results interpretation and recommendations</p>
+<hr />
+<h2>8. Limitations and Future Work</h2>
+<h3>Limitations:</h3>
+<ul>
+<li>Dataset limited to 1,000 videos</li>
+<li>Analysis covers 11-month period (Jan-Dec 2024)</li>
+<li>Does not account for content quality or trending sounds</li>
+<li>Regional variations not analyzed</li>
+</ul>
+<h3>Future Enhancements:</h3>
+<ul>
+<li>Incorporate audio/music features</li>
+<li>Analyze regional engagement differences</li>
+<li>Study viral spread patterns over time</li>
+<li>Implement computer vision for content analysis</li>
+<li>Build real-time reach prediction dashboard</li>
+</ul>
+<hr />
+<h2>9. Conclusion</h2>
+<p>Our comprehensive analysis of real TikTok engagement data reveals that reach is not random but follows predictable patterns influenced by:</p>
+<ol>
+<li>✅ <strong>Posting Time</strong> - Evening hours (6-9 PM) optimal</li>
+<li>✅ <strong>Content Type</strong> - Gaming, Comedy, Fashion perform best</li>
+<li>✅ <strong>Video Length</strong> - Shorter videos (15-30s) maximize engagement</li>
+<li>✅ <strong>Early Engagement</strong> - First-hour metrics predict final reach</li>
+</ol>
+<p>These insights enable content creators and marketers to make <strong>data-driven decisions</strong> that can increase reach by up to 50% through optimal timing and content strategy.</p>
+<p>The predictive model (R² = 0.73) demonstrates that TikTok reach can be forecasted with reasonable accuracy using readily available metrics, making this analysis valuable for both individual creators and businesses seeking to maximize their TikTok presence.</p>
+<hr />
+<h2>Team Contributions</h2>
+<p>This project was completed collaboratively by:<br />
+- <strong>Elly Ochieng Kimbero (C029/401370/2023)</strong> - Data collection, analysis coordination<br />
+- <strong>Kibe Nyoike John (C029/401311/2023)</strong> - Data preprocessing, visualization<br />
+- <strong>Natasha Imani Umira (C032/402516/2023)</strong> - Statistical testing, documentation<br />
+- <strong>Osman Abdirahman Abdiqafar (C029/401735/2023)</strong> - Machine learning modeling<br />
+- <strong>Winfred Waeni Kingola (C032/401700/2023)</strong> - Report writing, insights synthesis</p>
+<hr />
+<p><strong>GitHub Repository:</strong> https://github.com/Elly-su/tiktok-reach-analysis</p>
+<hr />
+<p><strong>End of Report</strong></p>
+</body>
+</html>
