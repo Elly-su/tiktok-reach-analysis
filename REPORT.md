@@ -357,9 +357,10 @@ Tiktok Reach Analysis Project/
 pip install pandas numpy matplotlib seaborn plotly scikit-learn jupyter
 ```
 
-2. Navigate to notebooks directory and run Jupyter:
+2. Clone the repository and navigate to notebooks:
 ```bash
-cd "c:\Users\ellio\Tiktok Reach Analysis Project\notebooks"
+git clone https://github.com/Elly-su/tiktok-reach-analysis.git
+cd tiktok-reach-analysis/notebooks
 jupyter notebook
 ```
 
@@ -395,8 +396,8 @@ See Section 2.2 for complete feature descriptions.
 
 ### C. Code Repository
 
-All code, notebooks, and data are available in the project directory:
-`c:\Users\ellio\Tiktok Reach Analysis Project\`
+All code, notebooks, and data are available in the GitHub repository:
+https://github.com/Elly-su/tiktok-reach-analysis
 
 ---
 
