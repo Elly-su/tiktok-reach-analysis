@@ -189,12 +189,4 @@ jupyter notebook
 
 ---
 
-## 🙏 Acknowledgments
-
-- TikTok for inspiring the analysis
-- Python data science community
-- Course instructors and peers
-
----
-
 **For detailed findings, see [REPORT.md](REPORT.md)**
