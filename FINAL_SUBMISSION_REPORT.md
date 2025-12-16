@@ -306,16 +306,6 @@ This project was completed collaboratively by:
 
 ---
 
-## References
-
-1. TikTok Analytics and Engagement Metrics Research
-2. Social Media Marketing Best Practices (2024)
-3. Machine Learning for Social Media Analysis
-4. Python Data Science Handbook (McKinney, 2017)
-5. Scikit-learn: Machine Learning in Python (Pedregosa et al., 2011)
-
----
-
 **GitHub Repository:** https://github.com/Elly-su/tiktok-reach-analysis
 
 **Date Submitted:** December 16, 2024
