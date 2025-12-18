@@ -7,7 +7,6 @@
 - Osman Abdirahman Abdiqafar - C029/401735/2023
 - Winfred Waeni Kingola - C032/401700/2023
 
-**Date:** December 16, 2024
 
 ---
 
